@@ -36,6 +36,15 @@ class SocialiteManager extends Manager implements Contracts\Factory
         );
     }
 
+    protected function createInstagramDriver()
+    {
+        $config = $this->app['config']['services.instagram'];
+
+        return $this->buildProvider(
+          'Laravel\Socialite\Two\InstagramProvider',$config
+        );
+    }
+
     /**
      * Create an instance of the specified driver.
      *
